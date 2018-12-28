@@ -13,5 +13,7 @@ Takes columns of data from a CSV file and inserts it into Revit Spaces parameter
 
 
 ## Python Scripts
+### Trane TRACE700 Room Checksums Full Processor (Test - Windows7 / Python 2.7):
+Processes full Trane TRACE700 System Component Selection input file in CSV format. The script returns Room Numbers and data of interest in CSV format for use in other programs like Revit.
 
 
