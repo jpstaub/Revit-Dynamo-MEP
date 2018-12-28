@@ -1,0 +1,24 @@
+Dynamo Graph: SetAirTerminalAirflow.dyn
+
+Last Updated: 2018-12-28
+
+Purpose: Divides Space-Wide airflows by the number of Air Terminals categorized by Duct System
+         Type and asigns Discrete Airflows to the Air Terminals of the same Duct System Type.
+
+Inputs:
+1. Space Airflow Parameters of interest (ex. TRACE Calculated Diffuser Airflow)
+2. Duct System Types that correspond with Space Airflow Parameters (ex. Supply Air)
+
+Outputs:
+None
+
+Notes:
+1. Space Airflow Parameters must correspond with Duct System Types in order.
+2. Spaces must be placed in the Project.
+3. Air Terminals must be placed in Spaces in the Project.
+4. Air Terminals must be Connected to the appropriate Duct System Type. 
+5. Airflow is divided equally among Air Terminals of the same Duct System Type in each space.
+
+Functional Development & Test:
+Revit 2018
+Dynamo 1.3 
