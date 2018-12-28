@@ -1,0 +1,24 @@
+Python Script: TRACE Room Checksums Full Processor.py
+
+Last Updated: 2019-00-00
+
+Purpose: This python script is meant to process full Trane TRACE700 System Component Selection input file in CSV format.
+		 The script returns Room Numbers and data of interest in CSV format for use in other programs like Revit.
+
+Inputs:
+1. Trane TRACE700 System Component Selection file in CSV format. File location is chosen via a typical directory GUI.
+2. Output file name and destination location via a typical directory GUI.
+
+
+Outputs:
+1. Room Numbers and data of interest in CSV format.
+
+
+Notes:
+1. See "Set up CSV reader" to set the column numbers for the data of interest.
+2. See def main() to enable/disable output of data.
+
+
+Functional Development & Test:
+Windows 7
+Python 2.7
