@@ -1,0 +1,26 @@
+Dynamo Graph: SetSpaceNumberIntoRooms.dyn
+
+Purpose: Sets Space Numbers into a shared parameter <Space Number> in an ARCH project file so the Room Schedule in the MECH project file shows a correlation between MECH Spaces and ARCH Rooms.
+
+Last Updated: 2018-12-28
+
+Workflow:
+1. Generate MECH model with Spaces as required.
+2. Generate ARCH model with Rooms as required by linking MECH model as well as other background CAD files to guide placement and naming / numbering.
+3. Add shared parameter <Space Number> to Room >> Identiy Data.
+4. Run the script against the ARCH model.
+5. Room shared parameter <Space Number> will populate with the space number under which the Room resides.
+
+Inputs:
+1. Selection of the linked MECH file.
+
+Outputs:
+None
+
+Notes:
+1. The shared parameter <Space Number> must exist in order for Dynamo to write data to the parameter.
+2. To add the shared parameter <Space Number> to Rooms: Manage tab >> Project Parameters >> Add Shared Parameter >> Check Rooms >> Select <Space Number> from Space Group.
+
+Functional Development & Test:
+Revit 2018
+Dynamo 1.3 
