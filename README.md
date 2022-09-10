@@ -10,7 +10,7 @@ A series of graphs that automate the generation of conceptual masses based on sp
 Sets TRACE700 data from CSV file generated from TRACE700 Room Checksums into matching space parameters. See below for TRACE700 Room Checksums processor to produce required CSV file. 
 
 ## Python Scripts
-### Trane TRACE700 Room Checksums Full Processor (Tested - Windows10 / Python 2.7):
+### TRACE700 (Tested - Windows10 / Python 2.7):
 Processes full Trane TRACE700 System Component Selection input file in CSV format. The script returns Room Numbers and data of interest in CSV format for use in other programs like Revit.
 
 
