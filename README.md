@@ -7,7 +7,7 @@ Ripcord Engineering developed utilities to improve the automation of MEP enginee
 A series of graphs that automate the generation of conceptual masses based on space volume geometry.
 
 ### AutomatedDaylightModel (Tested - Revit 2021 / Dynamo 2.3)
-Automates the generation of conceptual masses for export as a 3D DWG for daylight modeling by Velux Daylight Visualizer. 
+Automates the generation of conceptual masses for export as a 3D DWG in support of daylight modeling by Velux Daylight Visualizer. 
 
 ### TRACE700 (Tested - Revit 2021 / Dynamo 2.3):
 Sets TRACE700 data from CSV file generated from TRACE700 Room Checksums into matching space parameters. See below for TRACE700 Room Checksums processor to produce required CSV file. 
