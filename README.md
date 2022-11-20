@@ -13,7 +13,12 @@ Automates the generation of conceptual masses for export as a 3D DWG in support 
 Sets TRACE700 data from CSV file generated from TRACE700 Room Checksums into matching space parameters. See below for TRACE700 Room Checksums processor to produce required CSV file. 
 
 ## Python Scripts
-### TRACE700 (Tested - Windows10 / Python 2.7):
+### AutomatedDaylightModel >> imageProcessing.py (Tested - Windows10 / Python 3.10):
+Processes Velux Daylight Visualizer report images. Processed images can be overlayed and scaled on background plans to give architectural context to Daylight Factor results.
+
+### TRACE700 >> TRACE Room Checksums Full Processor.py (Tested - Windows10 / Python 2.7):
 Processes full Trane TRACE700 System Component Selection input file in CSV format. The script returns Room Numbers and data of interest in CSV format for use in other programs like Revit.
+
+
 
 
