@@ -14,7 +14,5 @@ Modify export setup
 	Layer as a zone if layer name starts with 'w_'
 		Mass >> 'w_zone'
 		Form >> 'w_zone'
-		
-YouTube Tutorials:
-1. How to prepare a Revit model for use in Velux Daylight Visualizer: https://www.youtube.com/watch?v=tFcZK5KDHQ4
-2. Revit-Daylight Visualizer - Daylight simulations as underlay in Revit: https://www.youtube.com/watch?v=J5ilicWeNCs
+	
+	

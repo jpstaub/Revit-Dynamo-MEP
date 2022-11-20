@@ -1,0 +1,404 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html
+  PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en_US' lang='en_US'>
+
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <title>Daylight Visualizer: Calculation on zones</title>
+  <style type='text/css'>
+    * {
+      font-family: Courier;
+      max-width: 800px;
+    }
+
+    h2,
+    h3,
+    h4,
+    p,
+    .nationName {
+      font-family: Helvetica;
+    }
+
+    h3,
+    h4 {
+      margin-bottom: 1px;
+    }
+
+    #reportOptionFootnote {
+      color: grey;
+      font-size: 0.8em;
+      font-family: Helvetica;
+    }
+
+    table {
+      border: 0px;
+    }
+
+    th,
+    td {
+      text-align: left;
+
+      padding-left: 5px;
+      padding-right: 5px;
+      width: 70px;
+    }
+
+    .right {
+      border-right: 1px solid #A9A9A9;
+    }
+
+    .statsTitle {
+      width: 230px;
+      border-right: 1px solid #A9A9A9;
+    }
+
+    .statsDesc {
+      width: 120px;
+      border-right: 1px solid #A9A9A9;
+    }
+
+    .statsValue {
+      width: 150px;
+      border-right: 1px solid #A9A9A9;
+    }
+
+    .statsResult {
+      width: 200px;
+    }
+
+    .overviewLeft {
+      width: 50px;
+      text-align: center;
+    }
+
+    .overviewRight {
+      width: 50px;
+      text-align: center;
+      border-left: 0px;
+      border-right: 1px solid #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Daylight Visualizer</h2>
+  <h3>Calculation on zones</h3>
+  <p>
+    Project name:
+    <span id='projectNameInfo'>
+      <!-- Project name set by script -->
+    </span>
+    <br />
+    Simulation type:
+    <span id='simulationTypeInfo'>
+      <!-- Simulation type set by script -->
+    </span>
+    <br />
+    Daylight Visualizer version:
+    <span id='versionInfo'>
+      <!-- Version set by script -->
+    </span>
+  </p>
+
+  <span id='nationWrapper'>
+    <h4>Select Country</h4>
+    <select name="nation" id="nation">
+      <option value="None">None</option>
+      <!-- Nations added by script -->
+    </select>
+  </span>
+
+  <span id='reportOptionsWrapper'>
+    <h4>Select Report Options</h4>
+    <span id="reportType">
+    </span>
+  </span>
+
+  <p id='reportOptionEN17037Info' style='display:none'>
+    <b>EN 17037</b> For <span class='nationName'>
+      <!-- Set by script --></span> the target daylight factor (D<sub>T</sub>)
+    is <span id='en17037TargetInfo'>
+      <!-- Set by script --></span> and the minimum daylight factor target
+    (D<sub>TM</sub>) is <span id='en17037MinimumInfo'>
+      <!-- Set by script --></span>. The standard is available for purchase from
+    the National Standardization Body in your country.
+  </p>
+
+  <p id='reportOptionActiveHouseInfo' style='display:none'>
+    <b>Active House</b> For <span class='nationName'>
+      <!-- Set by script --></span> the target daylight factor is <span
+      id='activeHouseTargetInfo'>
+      <!-- Set by script --></span>. The Active House specifications 3.0 are
+    available <a
+      href="https://www.activehouse.info/submit-your-project/apply-for-a-label/#specifications"
+      target="_blank">here</a>.
+  </p>
+
+  <p id='reportOptionFootnote' style='display:none'>
+    <em>* The illuminance (lux) values stated in brackets are derived from the
+      median external diffuse illuminance recorded in weather data files for the
+      selected location. </em>
+  </p>
+
+
+  <span id='zones'>
+    <!-- Zones added by script -->
+  </span>
+
+  <h3>Notes</h3>
+  <textarea id="noteArea" name="noteArea" style="width: 100%; height: 150px;">
+  </textArea>
+
+  <script>
+      var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.createTemplateTagFirstArg=function(a){return a.raw=a};$jscomp.createTemplateTagFirstArgWithRaw=function(a,b){a.raw=b;return a};
+var zoneData=
+    [
+      
+    {
+      zoneName: 'w_zone',
+
+      min: 0.534631,
+      max: 9.45574,
+      mean: 2.43937,
+      uni1: 0.219167,
+      uni1Ratio: 4.56272,
+      uni2: 0.0565403,
+      uni2Ratio: 17.6865,
+      perc05: 1.17244,
+      perc30: 1.74015,
+      perc40: 1.86579,
+      perc50: 1.98623,
+      perc60: 2.13942,
+
+      imgPath: 'w_zone.png'
+    }
+  ,
+
+    {
+      zoneName: 'w_zone-1',
+
+      min: 0.467979,
+      max: 9.66101,
+      mean: 2.15061,
+      uni1: 0.217603,
+      uni1Ratio: 4.59554,
+      uni2: 0.04844,
+      uni2Ratio: 20.6441,
+      perc05: 0.998256,
+      perc30: 1.61387,
+      perc40: 1.75024,
+      perc50: 1.86622,
+      perc60: 1.99781,
+
+      imgPath: 'w_zone-1.png'
+    }
+  ,
+
+    {
+      zoneName: 'w_zone-2',
+
+      min: 0.527395,
+      max: 10.2084,
+      mean: 2.58007,
+      uni1: 0.204411,
+      uni1Ratio: 4.8921,
+      uni2: 0.0516627,
+      uni2Ratio: 19.3563,
+      perc05: 0.960659,
+      perc30: 1.68575,
+      perc40: 1.83716,
+      perc50: 1.96736,
+      perc60: 2.16594,
+
+      imgPath: 'w_zone-2.png'
+    }
+  ,
+
+    {
+      zoneName: 'w_zone-3',
+
+      min: 0.573811,
+      max: 9.71054,
+      mean: 2.57964,
+      uni1: 0.222438,
+      uni1Ratio: 4.49563,
+      uni2: 0.0590915,
+      uni2Ratio: 16.9229,
+      perc05: 1.36423,
+      perc30: 1.8547,
+      perc40: 1.96815,
+      perc50: 2.13133,
+      perc60: 2.28833,
+
+      imgPath: 'w_zone-3.png'
+    }
+  ,
+
+    {
+      zoneName: 'w_zone-4',
+
+      min: 0.254146,
+      max: 1.26391,
+      mean: 0.617767,
+      uni1: 0.411395,
+      uni1Ratio: 2.43075,
+      uni2: 0.20108,
+      uni2Ratio: 4.97315,
+      perc05: 0.340162,
+      perc30: 0.479574,
+      perc40: 0.530247,
+      perc50: 0.579312,
+      perc60: 0.655126,
+
+      imgPath: 'w_zone-4.png'
+    }
+  ,
+
+    {
+      zoneName: 'w_zone-5',
+
+      min: 0.442907,
+      max: 9.33215,
+      mean: 1.87723,
+      uni1: 0.235936,
+      uni1Ratio: 4.23843,
+      uni2: 0.0474603,
+      uni2Ratio: 21.0702,
+      perc05: 0.757925,
+      perc30: 1.01591,
+      perc40: 1.11472,
+      perc50: 1.27465,
+      perc60: 1.51109,
+
+      imgPath: 'w_zone-5.png'
+    }
+  ,
+
+    {
+      zoneName: 'w_zone-6',
+
+      min: 0.303798,
+      max: 9.69819,
+      mean: 1.69432,
+      uni1: 0.179304,
+      uni1Ratio: 5.57711,
+      uni2: 0.0313253,
+      uni2Ratio: 31.9231,
+      perc05: 0.636695,
+      perc30: 1.0021,
+      perc40: 1.09671,
+      perc50: 1.23403,
+      perc60: 1.40556,
+
+      imgPath: 'w_zone-6.png'
+    }
+  ,
+
+    {
+      zoneName: 'w_zone-7',
+
+      min: 0.130672,
+      max: 9.16341,
+      mean: 1.12053,
+      uni1: 0.116616,
+      uni1Ratio: 8.57512,
+      uni2: 0.0142602,
+      uni2Ratio: 70.1254,
+      perc05: 0.334267,
+      perc30: 0.68329,
+      perc40: 0.754946,
+      perc50: 0.831908,
+      perc60: 0.920904,
+
+      imgPath: 'w_zone-7.png'
+    }
+  ,
+
+    {
+      zoneName: 'w_zone-8',
+
+      min: 0.430579,
+      max: 9.19984,
+      mean: 1.8571,
+      uni1: 0.231855,
+      uni1Ratio: 4.31303,
+      uni2: 0.0468029,
+      uni2Ratio: 21.3662,
+      perc05: 0.742233,
+      perc30: 1.00378,
+      perc40: 1.11268,
+      perc50: 1.2557,
+      perc60: 1.4437,
+
+      imgPath: 'w_zone-8.png'
+    }
+  ,
+
+    {
+      zoneName: 'w_zone-9',
+
+      min: 0.101245,
+      max: 0.614728,
+      mean: 0.273032,
+      uni1: 0.370817,
+      uni1Ratio: 2.69675,
+      uni2: 0.164699,
+      uni2Ratio: 6.0717,
+      perc05: 0.140938,
+      perc30: 0.215094,
+      perc40: 0.235003,
+      perc50: 0.257158,
+      perc60: 0.284939,
+
+      imgPath: 'w_zone-9.png'
+    }
+  ,
+
+    ]
+  ,projectName='untitled',dayfactor=true,decimalPlaces=2,version='3.0.86',en17037=[{Nation:"Cyprus",Median_Ext_Diff_Illuminance:18100,D_100lx:.006,D_300lx:.017,D_500lx:.028,D_750lx:.041},{Nation:"Malta",Median_Ext_Diff_Illuminance:16500,D_100lx:.006,D_300lx:.018,D_500lx:.03,D_750lx:.045},{Nation:"Greece",Median_Ext_Diff_Illuminance:19400,D_100lx:.005,D_300lx:.015,D_500lx:.026,D_750lx:.039},{Nation:"Portugal",Median_Ext_Diff_Illuminance:18220,
+D_100lx:.005,D_300lx:.016,D_500lx:.027,D_750lx:.041},{Nation:"Turkey",Median_Ext_Diff_Illuminance:19E3,D_100lx:.005,D_300lx:.016,D_500lx:.026,D_750lx:.039},{Nation:"Spain",Median_Ext_Diff_Illuminance:16900,D_100lx:.006,D_300lx:.018,D_500lx:.03,D_750lx:.044},{Nation:"Italy",Median_Ext_Diff_Illuminance:19200,D_100lx:.005,D_300lx:.016,D_500lx:.026,D_750lx:.039},{Nation:"Former Yugoslav Republic of Macedonia",Median_Ext_Diff_Illuminance:15400,D_100lx:.006,D_300lx:.019,D_500lx:.032,D_750lx:.049},{Nation:"Bulgaria",
+Median_Ext_Diff_Illuminance:18700,D_100lx:.005,D_300lx:.016,D_500lx:.027,D_750lx:.04},{Nation:"Romania",Median_Ext_Diff_Illuminance:18200,D_100lx:.005,D_300lx:.016,D_500lx:.027,D_750lx:.041},{Nation:"Croatia",Median_Ext_Diff_Illuminance:17E3,D_100lx:.006,D_300lx:.018,D_500lx:.029,D_750lx:.044},{Nation:"Slovenia",Median_Ext_Diff_Illuminance:17E3,D_100lx:.006,D_300lx:.018,D_500lx:.029,D_750lx:.044},{Nation:"Switzerland",Median_Ext_Diff_Illuminance:16E3,D_100lx:.006,D_300lx:.019,D_500lx:.031,D_750lx:.047},
+{Nation:"Hungary",Median_Ext_Diff_Illuminance:18100,D_100lx:.006,D_300lx:.017,D_500lx:.028,D_750lx:.041},{Nation:"Austria",Median_Ext_Diff_Illuminance:16E3,D_100lx:.006,D_300lx:.019,D_500lx:.031,D_750lx:.047},{Nation:"Slovakia",Median_Ext_Diff_Illuminance:16300,D_100lx:.006,D_300lx:.018,D_500lx:.031,D_750lx:.046},{Nation:"France",Median_Ext_Diff_Illuminance:15900,D_100lx:.006,D_300lx:.019,D_500lx:.031,D_750lx:.047},{Nation:"Luxembourg",Median_Ext_Diff_Illuminance:16E3,D_100lx:.006,D_300lx:.019,D_500lx:.031,
+D_750lx:.047},{Nation:"Czech Republic",Median_Ext_Diff_Illuminance:14900,D_100lx:.007,D_300lx:.02,D_500lx:.034,D_750lx:.05},{Nation:"Belgium",Median_Ext_Diff_Illuminance:15E3,D_100lx:.007,D_300lx:.02,D_500lx:.033,D_750lx:.05},{Nation:"United Kingdom",Median_Ext_Diff_Illuminance:14100,D_100lx:.007,D_300lx:.021,D_500lx:.035,D_750lx:.053},{Nation:"Poland",Median_Ext_Diff_Illuminance:14700,D_100lx:.007,D_300lx:.02,D_500lx:.034,D_750lx:.051},{Nation:"The Netherlands",Median_Ext_Diff_Illuminance:14400,
+D_100lx:.007,D_300lx:.021,D_500lx:.035,D_750lx:.052},{Nation:"Germany",Median_Ext_Diff_Illuminance:13900,D_100lx:.007,D_300lx:.022,D_500lx:.036,D_750lx:.054},{Nation:"Ireland",Median_Ext_Diff_Illuminance:14900,D_100lx:.007,D_300lx:.02,D_500lx:.034,D_750lx:.05},{Nation:"Lithuania",Median_Ext_Diff_Illuminance:15300,D_100lx:.007,D_300lx:.02,D_500lx:.033,D_750lx:.049},{Nation:"Denmark",Median_Ext_Diff_Illuminance:14200,D_100lx:.007,D_300lx:.021,D_500lx:.035,D_750lx:.053},{Nation:"Latvia",Median_Ext_Diff_Illuminance:13600,
+D_100lx:.007,D_300lx:.022,D_500lx:.037,D_750lx:.055},{Nation:"Estonia",Median_Ext_Diff_Illuminance:13600,D_100lx:.007,D_300lx:.022,D_500lx:.037,D_750lx:.055},{Nation:"Sweden",Median_Ext_Diff_Illuminance:12100,D_100lx:.008,D_300lx:.025,D_500lx:.041,D_750lx:.062},{Nation:"Norway",Median_Ext_Diff_Illuminance:12400,D_100lx:.008,D_300lx:.024,D_500lx:.04,D_750lx:.06},{Nation:"Finland",Median_Ext_Diff_Illuminance:13500,D_100lx:.007,D_300lx:.022,D_500lx:.037,D_750lx:.056},{Nation:"Iceland",Median_Ext_Diff_Illuminance:11500,
+D_100lx:.009,D_300lx:.026,D_500lx:.043,D_750lx:.065}];en17037.sort(function(a,b){return a.Nation.localeCompare(b.Nation)});var storageAvailable="localStorage"in window&&null!==window.localStorage,storageNationKey="nation",storageEN17037EnabledKey="en17037Report",storageActiveHouseEnabledKey="activeHouseReport";function readLocalStorage(a){if(!storageAvailable)return{result:null,isSome:!1};a=window.localStorage.getItem(a);return null===a?{result:null,isSome:!1}:{result:a,isSome:!0}}
+function writeLocalStorage(a,b){storageAvailable&&window.localStorage.setItem(a,b)}function clearLocalStorage(){storageAvailable&&window.localStorage.clear()}function checkboxChecked(a){a=document.getElementById(a);return null!==a?a.checked:!1}function bool(a){return"true"===a}var unit=dayfactor?"DF[%]":"lux",unitName=dayfactor?"D":"I";function decorateWithUnit(a){return a+" "+unit}
+function getZoneHTMLTemplate(a){return"\n      <h3>"+a.zoneName+"</h3>\n      <img alt='' src='"+a.imgPath+"'/><br/>\n\n      <span class='EN17037 Report' style=\"display:none\">\n        <h4>EN17037</h4>\n        <table cellspacing='0'>\n          <tr>\n              <td class='statsTitle'>F<sub>plane,&#37;</sub> &ge; 50&#37; (median)</td>\n              <td class='statsDesc'>D<sub>T</sub></td>\n              <td class='statsValue' id='"+a.zoneName+" EN17037 Median'>\x3c!-- value inserted by script --\x3e</td>\n              <td class='statsResult' id='"+
+a.zoneName+" EN17037 Median Status'>\x3c!-- value inserted by script --\x3e</td>\n          </tr>\n          <tr>\n              <td class='statsTitle'>F<sub>plane,&#37;</sub> &ge; 95&#37;</td>\n              <td class='statsDesc'>D<sub>TM</sub></td>\n              <td class='statsValue' id='"+a.zoneName+" EN17037 5th Percentile'>\x3c!-- value inserted by script --\x3e</td>\n              <td class='statsResult' id='"+a.zoneName+" EN17037 5th Percentile Status'>\x3c!-- value inserted by script --\x3e</td>\n          </tr>\n        </table>\n      </span>\n\n      <span class='Active House Report' style='display:none'>\n        <h4>Active House</h4>\n        <table cellspacing='0'>\n          <tr>\n              <td class='statsTitle'>F<sub>plane,&#37;</sub> &ge; 40&#37;</td>\n              <td class='statsDesc'>C4</td>\n              <td class='statsValue' id='"+
+a.zoneName+" Active House C4'>\x3c!-- value inserted by script --\x3e</td>\n              <td class='statsResult' id='"+a.zoneName+" Active House C4 Status'>\x3c!-- value inserted by script --\x3e</td>\n          </tr>\n          <tr>\n              <td class='statsTitle'>F<sub>plane,&#37;</sub> &ge; 50&#37;</td>\n              <td class='statsDesc'>C3</td>\n              <td class='statsValue' id='"+a.zoneName+" Active House C3'>\x3c!-- value inserted by script --\x3e</td>\n              <td class='statsResult' id='"+
+a.zoneName+" Active House C3 Status'>\x3c!-- value inserted by script --\x3e</td>\n          </tr>\n          <tr>\n              <td class='statsTitle'>F<sub>plane,&#37;</sub> &ge; 60&#37;</td>\n              <td class='statsDesc'>C2</td>\n              <td class='statsValue' id='"+a.zoneName+" Active House C2'>\x3c!-- value inserted by script --\x3e</td>\n              <td class='statsResult' id='"+a.zoneName+" Active House C2 Status'>\x3c!-- value inserted by script --\x3e</td>\n          </tr>\n          <tr>\n              <td class='statsTitle'>F<sub>plane,&#37;</sub> &ge; 70&#37;</td>\n              <td class='statsDesc'>C1</td>\n              <td class='statsValue' id='"+
+a.zoneName+" Active House C1'>\x3c!-- value inserted by script --\x3e</td>\n              <td class='statsResult' id='"+a.zoneName+" Active House C1 Status'>\x3c!-- value inserted by script --\x3e</td>\n          </tr>\n        </table>\n      </span>\n\n      <h4>Default</h4>\n      <table cellspacing='0'>\n        <tr>\n            <td class='statsTitle'>Average</td>\n            <td class='statsDesc'>"+unitName+"<sub>average</sub></td>\n            <td class='statsValue' id='"+a.zoneName+" Default Average'>\x3c!-- value inserted by script --\x3e</td>\n        </tr>\n        <tr>\n            <td class='statsTitle'>Median</td>\n            <td class='statsDesc'>"+
+unitName+"<sub>median</sub></td>\n            <td class='statsValue'  id='"+a.zoneName+" Default Median'>\x3c!-- value inserted by script --\x3e</td>\n        </tr>\n        <tr>\n            <td class='statsTitle'>Minimum</td>\n            <td class='statsDesc'>"+unitName+"<sub>min</sub></td>\n            <td class='statsValue' id='"+a.zoneName+" Default Minimum'>\x3c!-- value inserted by script --\x3e</td>\n        </tr>\n        <tr>\n            <td class='statsTitle'>Maximum</td>\n            <td class='statsDesc'>"+
+unitName+"<sub>max</sub></td>\n            <td class='statsValue' id='"+a.zoneName+" Default Maximum'>\x3c!-- value inserted by script --\x3e</td>\n        </tr>\n        <tr>\n            <td class='statsTitle'>Uniformity 1</td>\n            <td class='statsDesc'>"+unitName+"<sub>min</sub>/"+unitName+"<sub>average</sub></td>\n            <td class='statsValue' id='"+a.zoneName+" Default Uniformity 1'>\x3c!-- value inserted by script --\x3e</td>\n        </tr>\n        <tr>\n            <td class='statsTitle'>Uniformity 2</td>\n            <td class='statsDesc'>"+
+unitName+"<sub>min</sub>/"+unitName+"<sub>max</sub></td>\n            <td class='statsValue' id='"+a.zoneName+" Default Uniformity 2'>\x3c!-- value inserted by script --\x3e</td>\n        </tr>\n\n        <tr "+(dayfactor?"style='display:none'":"")+">\n            <td class='statsTitle'>F<sub>plane,&#37;</sub> &ge; 40&#37;</td>\n            <td class='statsDesc'></td>\n            <td class='statsValue' id='"+a.zoneName+" Default 60th Percentile'>\x3c!-- value inserted by script --\x3e</td>\n        </tr>\n        <tr "+
+(dayfactor?"style='display:none'":"")+">\n            <td class='statsTitle'>F<sub>plane,&#37;</sub> &ge; 50&#37;</td>\n            <td class='statsDesc'></td>\n            <td class='statsValue' id='"+a.zoneName+" Default 50th Percentile'>\x3c!-- value inserted by script --\x3e</td>\n        </tr>\n        <tr "+(dayfactor?"style='display:none'":"")+">\n            <td class='statsTitle'>F<sub>plane,&#37;</sub> &ge; 60&#37;</td>\n            <td class='statsDesc'></td>\n            <td class='statsValue' id='"+
+a.zoneName+" Default 40th Percentile'>\x3c!-- value inserted by script --\x3e</td>\n        </tr>\n        <tr "+(dayfactor?"style='display:none'":"")+">\n            <td class='statsTitle'>F<sub>plane,&#37;</sub> &ge; 70&#37;</td>\n            <td class='statsDesc'></td>\n            <td class='statsValue' id='"+a.zoneName+" Default 30th Percentile'>\x3c!-- value inserted by script --\x3e</td>\n        </tr>\n        <tr "+(dayfactor?"style='display:none'":"")+">\n            <td class='statsTitle'>F<sub>plane,&#37;</sub> &ge; 95&#37;</td>\n            <td class='statsDesc'></td>\n            <td class='statsValue' id='"+
+a.zoneName+" Default 5th Percentile'>\x3c!-- value inserted by script --\x3e</td>\n        </tr>\n      </table>\n      <br/>\n      "}var zoneListHTML="";zoneData.forEach(function(a){zoneListHTML+=getZoneHTMLTemplate(a)});var zonesSpan=document.getElementById("zones");zones.innerHTML=zoneListHTML;
+var projectNameInfo=document.getElementById("projectNameInfo"),simulationTypeInfo=document.getElementById("simulationTypeInfo"),versionInfo=document.getElementById("versionInfo"),nationWrapper=document.getElementById("nationWrapper"),nationSelection=document.getElementById("nation"),reportOptionsWrapper=document.getElementById("reportOptionsWrapper"),reportTypeOptions=document.getElementById("reportType"),reportOptionEN17037Info=document.getElementById("reportOptionEN17037Info"),reportOptionActiveHouseInfo=
+document.getElementById("reportOptionActiveHouseInfo"),activeHouseTargetInfo=document.getElementById("activeHouseTargetInfo"),en17037TargetInfo=document.getElementById("en17037TargetInfo"),en17037MinimumInfo=document.getElementById("en17037MinimumInfo");en17037TargetInfo=document.getElementById("en17037TargetInfo");var en17037Reports=document.getElementsByClassName("EN17037 Report");
+function getEN17037Nodes(a){return{en17037Median:document.getElementById(a.zoneName+" EN17037 Median"),en17037MedianStatus:document.getElementById(a.zoneName+" EN17037 Median Status"),en170375thPercentile:document.getElementById(a.zoneName+" EN17037 5th Percentile"),en170375thPercentileStatus:document.getElementById(a.zoneName+" EN17037 5th Percentile Status")}}var activeHouseReports=document.getElementsByClassName("Active House Report");
+function getActiveHouseNodes(a){return{activeHouseC4:document.getElementById(a.zoneName+" Active House C4"),activeHouseC4Status:document.getElementById(a.zoneName+" Active House C4 Status"),activeHouseC3:document.getElementById(a.zoneName+" Active House C3"),activeHouseC3Status:document.getElementById(a.zoneName+" Active House C3 Status"),activeHouseC2:document.getElementById(a.zoneName+" Active House C2"),activeHouseC2Status:document.getElementById(a.zoneName+" Active House C2 Status"),activeHouseC1:document.getElementById(a.zoneName+
+" Active House C1"),activeHouseC1Status:document.getElementById(a.zoneName+" Active House C1 Status")}}
+function getDefaultNodes(a){return{defaultAverage:document.getElementById(a.zoneName+" Default Average"),defaultMedian:document.getElementById(a.zoneName+" Default Median"),defaultMinimum:document.getElementById(a.zoneName+" Default Minimum"),defaultMaximum:document.getElementById(a.zoneName+" Default Maximum"),defaultUniformity1:document.getElementById(a.zoneName+" Default Uniformity 1"),defaultUniformity2:document.getElementById(a.zoneName+" Default Uniformity 2"),defaultPerc60:document.getElementById(a.zoneName+
+" Default 60th Percentile"),defaultPerc50:document.getElementById(a.zoneName+" Default 50th Percentile"),defaultPerc40:document.getElementById(a.zoneName+" Default 40th Percentile"),defaultPerc30:document.getElementById(a.zoneName+" Default 30th Percentile"),defaultPerc05:document.getElementById(a.zoneName+" Default 5th Percentile")}}
+function showReport(a,b){b?Array.prototype.forEach.call(a,function(c){c.style.display="inline"}):Array.prototype.forEach.call(a,function(c){c.style.display="none"})}var en17037ChkId="en17037",activeHouseChkId="activeHouse";
+function showReportInfoIfAnyReportActive(){var a=checkboxChecked(en17037ChkId),b=checkboxChecked(activeHouseChkId),c=en17037.find(function(d){return d.Nation===nationSelection.value});"undefined"===typeof c?b=a=!1:Array.prototype.forEach.call(document.getElementsByClassName("nationName"),function(d){d.innerHTML=c.Nation});a?(en17037MinimumInfo.innerHTML=(100*c.D_100lx).toFixed(1)+"&#37;",en17037TargetInfo.innerHTML=(100*c.D_300lx).toFixed(1)+"&#37;",reportOptionEN17037Info.style.display="block"):
+(en17037MinimumInfo.innerHTML="",en17037TargetInfo.innerHTML="",reportOptionEN17037Info.style.display="none");b?(activeHouseTargetInfo.innerHTML=(100*c.D_300lx).toFixed(1)+"&#37;",reportOptionActiveHouseInfo.style.display="block"):(activeHouseTargetInfo.innerHTML="",reportOptionActiveHouseInfo.style.display="none");reportOptionFootnote.style.display=a||b?"block":"none"}
+function enableEN17037Reports(){function a(c,d,e){c?(e.innerHTML="Pass ("+d+")",e.style.color="green"):(e.innerHTML="Fail ("+d+")",e.style.color="red")}showReport(en17037Reports,!0);showReportInfoIfAnyReportActive();writeLocalStorage(storageEN17037EnabledKey,!0);var b=en17037.find(function(c){return c.Nation===nationSelection.value});zoneData.forEach(function(c){var d=getEN17037Nodes(c);d.en17037Median.innerHTML=decorateWithUnit(c.perc50.toFixed(decimalPlaces));a(c.perc50>=100*b.D_300lx,(c.perc50*
+b.Median_Ext_Diff_Illuminance/100).toFixed(0)+" lux",d.en17037MedianStatus);d.en170375thPercentile.innerHTML=decorateWithUnit(c.perc05.toFixed(decimalPlaces));a(c.perc05>=100*b.D_100lx,(c.perc05*b.Median_Ext_Diff_Illuminance/100).toFixed(0)+" lux",d.en170375thPercentileStatus)})}function disableEN17037Reports(){showReport(en17037Reports,!1);showReportInfoIfAnyReportActive();writeLocalStorage(storageEN17037EnabledKey,!1)}
+function enableActiveHouseReports(){function a(c,d){var e=c>=100*b.D_300lx,h=(c*b.Median_Ext_Diff_Illuminance/100).toFixed(0);e?(d.innerHTML="Pass ("+h+" lux)",d.style.color="green"):(d.innerHTML="Fail ("+h+" lux)",d.style.color="red")}showReport(activeHouseReports,!0);showReportInfoIfAnyReportActive();writeLocalStorage(storageActiveHouseEnabledKey,!0);var b=en17037.find(function(c){return c.Nation===nationSelection.value});zoneData.forEach(function(c){var d=getActiveHouseNodes(c);d.activeHouseC4.innerHTML=
+decorateWithUnit(c.perc60.toFixed(decimalPlaces));a(c.perc60,d.activeHouseC4Status);d.activeHouseC3.innerHTML=decorateWithUnit(c.perc50.toFixed(decimalPlaces));a(c.perc50,d.activeHouseC3Status);d.activeHouseC2.innerHTML=decorateWithUnit(c.perc40.toFixed(decimalPlaces));a(c.perc40,d.activeHouseC2Status);d.activeHouseC1.innerHTML=decorateWithUnit(c.perc30.toFixed(decimalPlaces));a(c.perc30,d.activeHouseC1Status)})}
+function disableActiveHouseReports(){showReport(activeHouseReports,!1);showReportInfoIfAnyReportActive();writeLocalStorage(storageActiveHouseEnabledKey,!1)}function cleanupReportTypeOptions(){showReport(en17037Reports,!1);showReportInfoIfAnyReportActive();for(showReport(activeHouseReports,!1);reportTypeOptions.hasChildNodes();)reportTypeOptions.removeChild(reportTypeOptions.childNodes[0])}
+function enableReportOptions(a,b){function c(d,e,h,l,g){function k(m){f.checked?h():l()}var f=document.createElement("input");f.type="checkbox";f.id=d;f.name=d;f.value=e;f.checked=g;reportTypeOptions.appendChild(f);f.addEventListener("change",k);g=document.createElement("label");g["for"]=d;g.innerHTML=e;reportTypeOptions.appendChild(g);reportTypeOptions.appendChild(document.createElement("br"));k()}cleanupReportTypeOptions();c(en17037ChkId,"EN17037",enableEN17037Reports,disableEN17037Reports,a);c(activeHouseChkId,
+"Active House",enableActiveHouseReports,disableActiveHouseReports,b)}function disableReportOptions(){cleanupReportTypeOptions();var a=document.createElement("p");a.innerHTML="Select country for report options";reportTypeOptions.appendChild(a)}en17037.forEach(function(a){var b=document.createElement("option");b.value=a.Nation;b.innerHTML=a.Nation;nationSelection.appendChild(b)});
+function nationSelectionChanged(a,b){"None"===nationSelection.value?(clearLocalStorage(),disableReportOptions()):(writeLocalStorage(storageNationKey,nationSelection.value),enableReportOptions(a||checkboxChecked(en17037ChkId),b||checkboxChecked(activeHouseChkId)))}nationSelection.addEventListener("change",function(a){nationSelectionChanged(!1,!1)});projectNameInfo.innerHTML=projectName;simulationTypeInfo.innerHTML=dayfactor?"Daylight Factor":"Illuminance";versionInfo.innerHTML=version;
+zoneData.forEach(function(a){var b=getDefaultNodes(a);b.defaultAverage.innerHTML=decorateWithUnit(a.mean.toFixed(decimalPlaces));b.defaultMedian.innerHTML=decorateWithUnit(a.perc50.toFixed(decimalPlaces));b.defaultMinimum.innerHTML=decorateWithUnit(a.min.toFixed(decimalPlaces));b.defaultMaximum.innerHTML=decorateWithUnit(a.max.toFixed(decimalPlaces));b.defaultUniformity1.innerHTML=a.uni1.toFixed(Math.max(decimalPlaces,4));b.defaultUniformity2.innerHTML=a.uni2.toFixed(Math.max(decimalPlaces,4));b.defaultPerc60.innerHTML=
+decorateWithUnit(a.perc60.toFixed(decimalPlaces));b.defaultPerc50.innerHTML=decorateWithUnit(a.perc50.toFixed(decimalPlaces));b.defaultPerc40.innerHTML=decorateWithUnit(a.perc40.toFixed(decimalPlaces));b.defaultPerc30.innerHTML=decorateWithUnit(a.perc30.toFixed(decimalPlaces));b.defaultPerc05.innerHTML=decorateWithUnit(a.perc05.toFixed(decimalPlaces))});
+if(dayfactor){var storedNation=readLocalStorage(storageNationKey);nationSelection.value=storedNation.isSome?storedNation.result:"None";var en17037Enabled=readLocalStorage(storageEN17037EnabledKey),activeHouseEnabled=readLocalStorage(storageActiveHouseEnabledKey);nationSelectionChanged(en17037Enabled.isSome?bool(en17037Enabled.result):!1,activeHouseEnabled.isSome?bool(activeHouseEnabled.result):!1)}else nationWrapper.style.display="none",reportOptionsWrapper.style.display="none";
+
+  </script>
+</body>
+
+</html>

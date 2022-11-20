@@ -1,0 +1,10 @@
+Inkscape
+	Inkscape tutorial: Tracing bitmaps - https://inkscape.org/doc/tutorials/tracing/tutorial-tracing.html
+	Inkscape manual: Clipping and Masking - https://inkscape-manuals.readthedocs.io/en/latest/clipping-and-masking.html
+	
+Python
+	Image crop tutorial - https://www.askpython.com/python/examples/crop-an-image-in-python
+	Finding shapes in images using Python and OpenCV - https://pyimagesearch.com/2014/10/20/finding-shapes-images-using-python-opencv/
+	Image masking with OpenCV - https://pyimagesearch.com/2021/01/19/image-masking-with-opencv/
+	
+	Image processing cookbook examples - https://github.com/PacktPublishing/Python-Image-Processing-Cookbook
