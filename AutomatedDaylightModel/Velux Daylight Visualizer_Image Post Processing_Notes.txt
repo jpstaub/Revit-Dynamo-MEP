@@ -3,8 +3,34 @@ Inkscape
 	Inkscape manual: Clipping and Masking - https://inkscape-manuals.readthedocs.io/en/latest/clipping-and-masking.html
 	
 Python
-	Image crop tutorial - https://www.askpython.com/python/examples/crop-an-image-in-python
-	Finding shapes in images using Python and OpenCV - https://pyimagesearch.com/2014/10/20/finding-shapes-images-using-python-opencv/
-	Image masking with OpenCV - https://pyimagesearch.com/2021/01/19/image-masking-with-opencv/
+	Problem: Crop image to contents and make background transparent.
+	Sequence of steps:
+		1. Load image from disk into memory
+		2. Crop out daylight factor scale
+		3. Grayscale the image
+		4. Make a mask by turning grayscale into black & white image
+		5. Make black background transparent.
+		6. Find bounding box of mask
+		7. Crop image
+		8. Save result from memory to disk
+		
+	Dependencies:
+		OpenCV - https://opencv.org/about/
+			$ pip install opencv-contrib-python
+			
+		tkinter - https://docs.python.org/3/library/tkinter.html
+		
+		os - https://docs.python.org/3/library/os.html		
+		
+	Background:	
+		Python OpenCV: Crop image to contents and make background transparent - https://stackoverflow.com/questions/60989084/python-opencv-crop-image-to-contents-and-make-background-transparent
+		Python list files in directory - https://www.geeksforgeeks.org/python-list-files-in-a-directory/
+		Python file dialog - https://pythonspot.com/tk-file-dialogs/
 	
-	Image processing cookbook examples - https://github.com/PacktPublishing/Python-Image-Processing-Cookbook
+		Image crop tutorial - https://www.askpython.com/python/examples/crop-an-image-in-python
+		Grayscaling of images using OpenCV - https://www.geeksforgeeks.org/python-grayscaling-of-images-using-opencv/
+		OpenCV bounding box = https://www.delftstack.com/howto/python/opencv-bounding-box/
+		Image masking with OpenCV - https://pyimagesearch.com/2021/01/19/image-masking-with-opencv/
+		Save image to disk - https://pythonexamples.org/python-opencv-cv2-imwrite-save-image/
+	
+		Image processing cookbook examples - https://github.com/PacktPublishing/Python-Image-Processing-Cookbook

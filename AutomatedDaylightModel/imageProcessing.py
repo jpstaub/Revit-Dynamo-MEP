@@ -11,7 +11,7 @@ Image processing utility for Velux Daylight Visualizer zone images.
 3. Crops Daylight Factor image with transparent background.
 4. Saves cropped Daylight Factor image with transparent background for use.
 
-Saved images can be overlayed and scaled on background plans to give
+Saved images can be underlayed and scaled on background plans to give
 architectural context to Daylight Factor results.
 """
 

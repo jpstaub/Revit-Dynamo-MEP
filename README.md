@@ -7,14 +7,14 @@ Ripcord Engineering developed utilities to improve the automation of MEP enginee
 A series of graphs that automate the generation of conceptual masses based on space volume geometry.
 
 ### AutomatedDaylightModel (Tested - Revit 2021 / Dynamo 2.3)
-Automates the generation of conceptual masses for export as a 3D DWG in support of daylight modeling by [Velux Daylight Visualizer](https://www.velux.com/what-we-do/digital-tools/daylight-visualizer). 
+Automates the generation of conceptual masses for export as a 3D DWG in support of daylight modeling by [Velux Daylight Visualizer](https://www.velux.com/what-we-do/digital-tools/daylight-visualizer). See Python Scripts below for a companion image processor to accelerate daylight deliverables production workflow.
 
 ### TRACE700 (Tested - Revit 2021 / Dynamo 2.3):
-Sets TRACE700 data from CSV file generated from TRACE700 Room Checksums into matching space parameters. See below for TRACE700 Room Checksums processor to produce required CSV file. 
+Sets TRACE700 data from CSV file generated from TRACE700 Room Checksums into matching space parameters. See Python Scripts below for a Room Checksums processor to produce the prerequisite CSV file. 
 
 ## Python Scripts
 ### AutomatedDaylightModel >> imageProcessing.py (Tested - Windows10 / Python 3.10):
-Processes [Velux Daylight Visualizer](https://www.velux.com/what-we-do/digital-tools/daylight-visualizer) report images. Processed images can be overlayed and scaled on background plans to give [architectural context](https://www.youtube.com/watch?v=J5ilicWeNCs) to Daylight Factor results.
+Processes [Velux Daylight Visualizer](https://www.velux.com/what-we-do/digital-tools/daylight-visualizer) report images. Processed images can be underlayed and scaled on background plans to give [architectural context](https://www.youtube.com/watch?v=J5ilicWeNCs) to Daylight Factor results.
 
 ### TRACE700 >> TRACE Room Checksums Full Processor.py (Tested - Windows10 / Python 2.7):
 Processes full Trane TRACE700 System Component Selection input file in CSV format. The script returns Room Numbers and data of interest in CSV format for use in other programs like Revit.

@@ -1,18 +1,28 @@
-Daylight Zones
-	Conceptual Mass
+DTG: 11/20/22
 
-Revit exports materials based on model category
+Revit:
+	Daylight Zones
+		Designatd using Conceptual Mass
 
-Export multiple masses as different layers
-	Assign each mass a different material
-	Set different transparency in each material
+	Exports materials based on model category
 
-Export DWG from 3D view
+	Export multiple masses as different layers
+		Assign each mass a different material
+		Set different transparency in each material
 
-Modify export setup
-	BS1192
-	Layer as a zone if layer name starts with 'w_'
-		Mass >> 'w_zone'
-		Form >> 'w_zone'
-	
-	
+	Export DWG from 3D view
+
+	Modify export setup
+		Export all properties BYLAYER, and create new layers for overrides
+		BS1192
+		Layer modification:
+			Category >> Floors
+				Floors >> Floor
+			Layer as a zone if layer name starts with 'w_'
+			Category >> Mass
+				Mass >> 'w_zone'
+				Form >> 'w_zone'
+		
+YouTube Tutorials:
+1. How to prepare a Revit model for use in Velux Daylight Visualizer: https://www.youtube.com/watch?v=tFcZK5KDHQ4
+2. Revit-Daylight Visualizer - Daylight simulations as underlay in Revit: https://www.youtube.com/watch?v=J5ilicWeNCs
