@@ -2,7 +2,7 @@ DTG: 11/20/22
 
 Revit:
 	Daylight Zones
-		Designatd using Conceptual Mass
+		Designated using Conceptual Mass
 
 	Exports materials based on model category
 
